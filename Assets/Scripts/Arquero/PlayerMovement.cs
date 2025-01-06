@@ -37,11 +37,11 @@ public class PlayerMovement : MonoBehaviour, IMoveable
     /// <summary>Realiza un salto</summary>
     public void Jump()
     {
-        if (_isGrounded)
-        {
+       // if (_isGrounded)
+        //{
             _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-            _isGrounded=false;
-        }
+          //  _isGrounded=false;
+       // }
     }
 
     /// <summary>Determina si existe una colisión con un objeto ubicado en la parte inferior
@@ -50,10 +50,10 @@ public class PlayerMovement : MonoBehaviour, IMoveable
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Analiza colisión con múltiples puntos que están por encima del objeto (normal).
-        if (collision.contacts[0].normal.y>0.5f)
-        {
-            _isGrounded = true;
-        }
+        //if (collision.contacts[0].normal.y>0.5f)
+       // {
+         //   _isGrounded = true;
+        //}
     }
 
 
