@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4090238949
+    locked: 0
+  - name: GroundColisions
+    uniqueID: 2562661375
+    locked: 0
