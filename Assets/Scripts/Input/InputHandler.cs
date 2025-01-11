@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,14 @@ public class InputHandler : MonoBehaviour
     /// <remarks>Este componente se utiliza para delegar las acciones de movimiento 
     /// basadas en el input del usuario.</remarks>
     private IMoveable _moveable;
+    private bool _canMove;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        _canMove = true;
         // Obtiene el componente que implementa IMoveable en el mismo GameObject.
         _moveable = GetComponent<IMoveable>();
         if( _moveable == null)
@@ -28,14 +34,28 @@ public class InputHandler : MonoBehaviour
     {
         if (_moveable == null) { return; }
 
+        
+
+        _canMove = _moveable.CanMove();
+
+        if (!_canMove) { return; }
+
         // Captura el input horizontal del usuario y delega la acción a _moveable
         float inputH = Input.GetAxisRaw("Horizontal");
         _moveable.Move(inputH);
 
-        // Si captura el input de alto del usuario delega la acción a _moveable
+        // Si captura el input de salto del usuario delega la acción a _moveable
         if (Input.GetButtonDown("Jump"))
         {
             _moveable.Jump();
         }
+
+        // Si captura el input de ataque del usuario delega la acción a _moveable
+        if (Input.GetButtonDown("Fire1"))
+        {
+            _moveable.Attack();
+        }
+
+        
     }
 }

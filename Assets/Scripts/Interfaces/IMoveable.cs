@@ -10,6 +10,9 @@ using UnityEngine;
 /// </remarks>
 public interface IMoveable
 {
+    /// <summary>Realiza un ataque</summary>
+    void Attack();
+
     /// <summary>Realiza un movimiento lateral</summary>
     /// <param name="inputH">Dirección del movimiento, entre -1 (izquierda) y 1 (derecha). 
     /// 0 indica que no hay movimiento</param>
@@ -17,4 +20,6 @@ public interface IMoveable
     
     /// <summary>Realiza un salto</summary>
     void Jump();
+
+    bool CanMove();
 }

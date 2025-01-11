@@ -41,9 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Paralax
+    uniqueID: 885461587
+    locked: 0
   - name: Background
     uniqueID: 4090238949
     locked: 0
   - name: GroundColisions
     uniqueID: 2562661375
+    locked: 0
+  - name: Player
+    uniqueID: 265480827
     locked: 0
