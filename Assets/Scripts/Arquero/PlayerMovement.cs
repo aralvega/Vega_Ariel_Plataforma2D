@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour, IMoveable
     public void Attack()
     {
         _isAttacking = true; //Marca como atacando
-        //_rb.velocity = Vector2.zero; //Detiene el movimiento horizontal
+        //_rb.velocity = Vector2.zero; //Detiene el movimiento horizontal || bloqueado para permitir 
         _animator.SetTrigger("attack");
     }
 
